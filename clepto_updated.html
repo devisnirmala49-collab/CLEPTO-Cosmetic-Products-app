@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clepto - Cosmetic Products</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fffafc;
+      }
+      header {
+        background-color: #ffe3ec;
+        text-align: center;
+        padding: 15px;
+      }
+      header img {
+        width: 180px;
+        height: auto;
+        display: block;
+        margin: 0 auto 5px;
+      }
+      nav {
+        background: #ff8fab;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      section {
+        padding: 20px;
+      }
+      h2 {
+        color: #d63384;
+      }
+      .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .product {
+        background: white;
+        border: 1px solid #f3d1d5;
+        border-radius: 8px;
+        width: 200px;
+        text-align: center;
+        padding: 10px;
+      }
+      .product img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+      form {
+        background: #fff;
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        max-width: 400px;
+        margin: auto;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        background: #d63384;
+        color: #fff;
+        border: none;
+        padding: 8px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background: #ad2668;
+      }
+      footer {
+        background: #ff8fab;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .grid {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+      .card {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #f1b5c0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- your Clepto logo -->
+      <img src="clepto1.jpg.png"/>
+      <h1 style="color: #b0005c">CLEPTO - Cosmetic Products</h1>
+      <p style="font-weight: bold; color: #ff66a3">
+        Shop the best makeup & skincare collection online!
+      </p>
+    </header>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+
+    <section id="home">
+      <h2>Welcome to Clepto!</h2>
+      <p>
+        Discover the finest range of beauty and skincare essentials from Clepto
+        Cosmetics. Enhance your glow with our premium products.
+      </p>
+    </section>
+
+    <section id="products">
+      <h2>Our Bestselling Products</h2>
+      <div class="product-grid">
+        <div class="product">
+          <img
+            src="https://images.ctfassets.net/wlke2cbybljx/6Z75K7EQh8g4FfDz4TrtyZ/db8c19ba086ca39a187640400ba323b3/LIPSTICKS_X10_Square_RGB.jpg"
+            alt="Lipstick"
+          />
+          <h4>Velvet Matte Lipstick</h4>
+          <p>₹499</p>
+        </div>
+        <div class="product">
+          <img
+            src="https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000000494434321/TQ6w0mKDwhn-000000000494434321_1.jpg"
+            alt="Foundation"
+          />
+          <h4>HydraGlow Foundation</h4>
+          <p>₹1199</p>
+        </div>
+        <div class="product">
+          <img
+            src="https://artdeco.com/cdn/shop/collections/Kategoriebanner-Eyeliner-Kajal.jpg?v=1695401377&width=1024"
+            alt="Eyeliner"
+          />
+          <h4>Intense Kajal 24H</h4>
+          <p>₹249</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="login">
+      <h2>User Login</h2>
+      <form onsubmit="return loginValidate()">
+        <label>Email:</label>
+        <input type="email" id="loginEmail" placeholder="Enter Email" />
+        <label>Password:</label>
+        <input type="password" id="loginPass" placeholder="Enter Password" />
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section id="register">
+      <h2>User Registration</h2>
+      <form onsubmit="return registerValidate()">
+        <label>Full Name:</label>
+        <input type="text" id="rname" />
+        <label>Email:</label>
+        <input type="email" id="remail" />
+        <label>Mobile Number:</label>
+        <input type="text" id="rphone" />
+        <label>Password:</label>
+        <input type="password" id="rpass" />
+        <label>Confirm Password:</label>
+        <input type="password" id="rcpass" />
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <section id="orders">
+      <h2>Orders List</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Lipstick</strong>
+          <p>Status: Delivered</p>
+        </div>
+        <div class="card">
+          <strong>Foundation</strong>
+          <p>Status: Shipped</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="wishlist">
+      <h2>Wishlist</h2>
+      <ul>
+        <li>Rose Dew Face Mist</li>
+        <li>Butter Gloss</li>
+      </ul>
+    </section>
+
+    <section id="reviews">
+      <h2>Customer Comments & Reviews</h2>
+      <div class="card">
+        <p>“Love the lipstick shades! Smooth texture 💖” - Priya</p>
+        <p>“Foundation gives amazing coverage!” -Ananya</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Customer Care / Report Issue</h2>
+      <form>
+        <label>Your Name:</label>
+        <input type="text" placeholder="Enter your name" />
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" />
+        <label>Message / Issue:</label>
+        <textarea placeholder="Type your message here..."></textarea>
+        <button>Submit</button>
+      </form>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        <b>Clepto Cosmetics</b> is your trusted beauty destination for
+        premium-quality makeup and skincare products. Our goal is to bring out
+        the natural glow in every individual with safe, cruelty-free cosmetics.
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2025 Clepto Cosmetics | Designed for Academic Project</p>
+    </footer>
+
+    <script>
+      function loginValidate() {
+        let email = document.getElementById("loginEmail").value.trim();
+        let pass = document.getElementById("loginPass").value.trim();
+        if (email === "" || pass === "") {
+          alert("Please enter email and password!");
+          return false;
+        }
+        alert("Login successful!");
+        return true;
+      }
+
+      function registerValidate() {
+        let name = document.getElementById("rname").value.trim();
+        let email = document.getElementById("remail").value.trim();
+        let phone = document.getElementById("rphone").value.trim();
+        let pass = document.getElementById("rpass").value.trim();
+        let cpass = document.getElementById("rcpass").value.trim();
+        if (
+          name === "" ||
+          email === "" ||
+          phone === "" ||
+          pass === "" ||
+          cpass === ""
+        ) {
+          alert("All fields are required!");
+          return false;
+        }
+        if (!email.includes("@")) {
+          alert("Invalid email format!");
+          return false;
+        }
+        if (pass.length < 6) {
+          alert("Password must be at least 6 characters!");
+          return false;
+        }
+        if (pass !== cpass) {
+          alert("Passwords do not match!");
+          return false;
+        }
+        alert("Registration successful!");
+        return true;
+      }
+    </script>
+  </body>
+</html>
